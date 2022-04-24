@@ -54,5 +54,21 @@ class AccountTest {
 		Assertions.assertEquals(expectedValue, acc.getBalance());
 		Assertions.assertTrue(result == initialBalance);		
 	}
+	
+	@Test
+	void withdrawShouldDecreaseBalanceWhenSufficientBalance() {
+		// Arrange
+		double expectedValue = 300.0;
+		double amount = 500;
+		double initialBalance = 800.0;
+		
+		Account acc = AccountFactory.createAccount(initialBalance);
+		
+		// Act
+		acc.withdraw(amount);
+		
+		// Assertions
+		Assertions.assertEquals(expectedValue, acc.getBalance());
+	}
 
 }

@@ -71,7 +71,7 @@ class FinancingTests {
 		// Arrange
 		Financing f = new Financing(100000.0, 2000.0, 80);
 		
-		// Action
+		// Assertion
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			// Action
 			f.setIncome(1900.00);
@@ -95,11 +95,22 @@ class FinancingTests {
 		// Arrange
 		Financing f = new Financing(100000.0, 2000.0, 80);
 		
-		// Action
+		// Assertion
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			// Action
 			f.setMonths(70);
 		});
+	}
+	
+	@Test
+	void entryShouldCalculateEntryCorrectly() {
+		// Arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		// Action
+				
+		// Assertions
+		Assertions.assertEquals(20000.00, f.entry());
 	}
 	
 

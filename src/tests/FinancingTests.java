@@ -42,6 +42,18 @@ class FinancingTests {
 		Assertions.assertEquals(90000.0, f.getTotalAmount());		
 	}
 	
+	@Test
+	void setTotalAmountShouldThrowIllegalArgumentExceptionWhenInvalidData() {
+		// Arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		// Action
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			// Action
+			f.setTotalAmount(190000.00);
+		});
+	}
+	
 	
 
 }

@@ -54,6 +54,18 @@ class FinancingTests {
 		});
 	}
 	
+	@Test
+	void setIncomeShouldUpdateObjectWhenValidData() {
+		// Arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		// Action
+		f.setIncome(2001.00);
+		
+		// Assertions
+		Assertions.assertEquals(2001.0, f.getIncome());		
+	}
+	
 	
 
 }

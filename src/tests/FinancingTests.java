@@ -29,5 +29,19 @@ class FinancingTests {
 			Financing f = new Financing(100000.0, 2000.0, 20);
 		});
 	}
+	
+	@Test
+	void setTotalAmountShouldUpdateObjectWhenValidData() {
+		// Arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		// Action
+		f.setTotalAmount(90000.00);
+		
+		// Assertions
+		Assertions.assertEquals(90000.0, f.getTotalAmount());		
+	}
+	
+	
 
 }

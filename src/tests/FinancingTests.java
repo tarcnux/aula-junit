@@ -78,5 +78,17 @@ class FinancingTests {
 		});
 	}
 	
+	@Test
+	void setMonthsShouldUpdateObjectWhenValidData() {
+		// Arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		// Action
+		f.setMonths(81);
+		
+		// Assertions
+		Assertions.assertEquals(81, f.getMonths());		
+	}
+	
 
 }
